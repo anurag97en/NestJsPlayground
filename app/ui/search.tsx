@@ -5,7 +5,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const replace = useRouter();
+  const { replace } = useRouter();
 
   function handleSearch(term: string) {
     console.log(`Searching... ${term}`);
