@@ -19,6 +19,7 @@ export type Customer = {
 export type Invoice = {
   id: string;
   customer_id: string;
+  //input elements with type="number" actually return a string, not a number
   amount: number;
   date: string;
   // In TypeScript, this is called a string union type.
@@ -40,7 +41,6 @@ export type LatestInvoice = {
 };
 
 // The database returns a number for amount, but we later format it to a string with the formatCurrency function
-//
 export type LatestInvoiceRaw = Omit<LatestInvoice, 'amount'> & {
   amount: number;
 };
